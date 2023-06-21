@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/2164/2164832.png">
+    <title>Api SmartList Compare</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        table {
+            
+            border-collapse: separate;
+            box-sizing: border-box;
+            text-indent: initial;
+            white-space: normal;
+            line-height: normal;
+            font-weight: normal;
+            font-size: medium;
+            font-style: normal;
+            text-align: start;
+            border-spacing: 2px;
+            border-color: gray;
+            font-variant: normal;
+        }
+
+        th,td {
+            border: 1px solid black;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-right-width: 1px;
+        }
+        .long-td {
+            width: 350px; /* Cambia el valor según tus necesidades */
+          }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container shadow p-0">
+        <h2 class="mb-3 p-2" style="text-align: center; background-color: #8700b0; color: #ffffff;">Welcome to Api SmartList
+            Compare with Django Python</h2>
+        <table class="mt-3" style="width: 95%;margin: 0 auto; background-color: #d6a6e4; color:#000000;">
+            <tbody>
+                <tr style="background-color: #8700b0; color: #ffffff;">
+                    <th>Method</th>
+                    <th>Url</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>GET </td>
+                    <td class="long-td">/categorias</td>
+                    <td>Lista de Categorias</td>
+                </tr>
+                <tr>
+                    <td>GET </td>
+                    <td class="long-td">/categorias/{id_categoria}/subcategorias</td>
+                    <td>Lista de Subcategorias por id_categoria</td>
+                </tr>
+                <tr>
+                    <td>GET </td>
+                    <td class="long-td">/subcategorias/{id_subcategoria}/tipos</td>
+                    <td>Lista de Tipos por id_subcategoria</td>
+                </tr>
+                <tr>
+                    <td>GET </td>
+                    <td class="long-td">/tipos/{id_tipo}/productos</td>
+                    <td>Lista de Productos por id_tipo</td>
+                </tr>
+                <tr>
+                    <td>GET </td>
+                    <td class="long-td">/usuarios</td>
+                    <td>Lista de Usuarios</td>
+                </tr> 
+                <tr>
+                    <td>GET </td>
+                    <td class="long-td">/usuario/{nombre_usuario}/{contrasena}</td>
+                    <td>Objeto Usuario si coincide email y contraseña o {"usuario":null}</td>
+                </tr>
+                <tr>
+                    <td>GET </td>
+                    <td class="long-td">/supermercado/{id_supermercado}/productos</td>
+                    <td>Lista de Productos por id_supermercado</td>
+                </tr>       
+                <tr>
+                    <td>GET </td>
+                    <td class="long-td">/supermercados</td>
+                    <td>Lista de Supermercados</td>
+                </tr>
+                <tr>
+                    <td>GET </td>
+                    <td class="long-td">/marcas</td>
+                    <td>Lista de Marcas</td>
+                </tr>
+                <tr>
+                    <td>GET </td>
+                    <td class="long-td">/marcas/{id_supermercado}</td>
+                    <td>Lista de Marcas por id_supermercado</td>
+                </tr>
+                <tr>
+                    <td>GET </td>
+                    <td class="long-td">/listacompra/{id_usuario}/productos</td> 
+                    <td>Lista de la Compra de un Usuario por id_usuario</td>
+                </tr>               
+                <tr>
+                    <td>POST</td>
+                    <td class="long-td">/usuario</td>
+                    <td>Add new usuario. &lt;= JSON objeto usuario o {"msg":"Imcomplete Data..."} o {"msg": "User Already Exist..."}</td>
+                </tr>
+                <tr>
+                    <td>POST</td>
+                    <td class="long-td">listacompra/{id_usuario}/producto</td>
+                    <td>Add Producto a la Lista de la Compra. &lt;= JSON objeto Lista Compra o {"msg":"Imcomplete Data..."} o {"msg": "Product already exists in the shopping list..."}</td>
+                </tr>
+                <tr>
+                    <td>PUT</td>
+                    <td class="long-td">/usuario/{email}</td>
+                    <td>Actualizar Usuario por su email (Unico de cada usuario porque los correos electronicos no se repiten)</td>
+                </tr>
+                <tr>
+                    <td>DELETE</td>
+                    <td class="long-td">/usuario/{email}</td>
+                    <td>Eliminar Usuario por su email (Unico de cada usuario porque los correos electronicos no se repiten)</td>
+                </tr>
+                <tr>
+                    <td>DELETE</td>
+                    <td class="long-td">/listacompra/{id_usuario}/producto/{id_producto}</td>
+                    <td>Eliminar Producto de la Lista de la Compra por id_usuario e id_producto</td>
+                <tr>
+                    <td>Nota</td>
+                    <td>La tabla Usuarios</td>
+                    <td>Tienen id AUTO_INCREMENT</td>
+                </tr>
+            </tbody>
+        </table>
+     <footer><h3 class="mt-3 p-2" style="text-align: center; background-color: #8700b0; color: #ffffff;">&copy; Developed By Valentina S.Barrera</h3></footer>   
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
